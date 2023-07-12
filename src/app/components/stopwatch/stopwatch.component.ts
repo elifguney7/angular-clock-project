@@ -21,23 +21,23 @@ export class StopwatchComponent implements OnInit {
     this.startTimer = setInterval(() => {
 
       this.ms = (parseInt(this.ms) + 1).toString();
-      this.ms = this.ms < '10' ? '0' + this.ms : this.ms;
+      this.ms = parseInt(this.ms) < 10 ? '0' + this.ms : this.ms;
 
       if (this.ms == '100') {        
         this.sec = (parseInt(this.sec) + 1).toString();
-        this.sec = this.sec < '10' ? '0' + this.sec : this.sec;
+        this.sec = parseInt(this.sec) < 10 ? '0' + this.sec: this.sec;
         this.ms = '0' + 0;
       }
 
       if (this.sec == '60') {
         this.min = (parseInt(this.min) + 1).toString();
-        this.min = this.min < '10' ? '0' + this.min : this.min;
+        this.min = parseInt(this.min) < 10 ? '0' + this.min : this.min;
         this.sec = '0' + 0;
       }
 
       if (this.min == '60') {
         this.hour = (parseInt(this.hour) + 1).toString();
-        this.hour = this.hour < '10' ? '0' + this.hour : this.hour;
+        this.hour = parseInt(this.hour) < 10 ? '0'+ this.hour : this.hour;
         this.min = "0" + 0;
       }
 
