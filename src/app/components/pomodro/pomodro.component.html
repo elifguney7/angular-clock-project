@@ -1,23 +1,37 @@
-<section>  
-    <div class="container">
-      <div class="pomodroHeading">CREATE YOUR OWN POMODRO!</div>
-        <p class="pomodroText">Please select study time between 1-90 minutes and break time between 1-30 minutes</p>
-        
-        <div class="form-group row">
-          <label for="fname" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Study Time:</label>
-        <div class="col-sm-4">
-          <input [(ngModel)]="sTime" id="studyTime" class="form-control" style="background-color: #edf5e1;" >
-          <button type="button" class="pomodroButton" (click)="setSTime()">Set </button>
-        </div>
-        <label for="fname" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Break Time:</label>
-        <div class="col-sm-4">
-          <input [(ngModel)]="bTime" id="breakTime" class="form-control" style="background-color: #edf5e1;">    
-          <button type="button" class="pomodroButton" (click)="setBTime()">Set</button>        
-        </div>
-        
-        </div>         
-        <p class="responseText">{{ responseText }}</p>
-        <div id="app"></div>           
-        
-    </div>        
+<section>
+  <div class="container">
+    <div class="pomodroHeading">CREATE YOUR OWN POMODRO!</div>
+    <p class="pomodroText">Please select study time between 1-90 minutes and break time between 1-30 minutes</p>
+
+    <div class="form-group row">
+      <label for="studyTime" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Study Time:</label>
+      <div class="col-sm-4">
+        <input [(ngModel)]="sTime" id="studyTime" class="form-control" style="background-color: #edf5e1;">
+        <button type="button" class="pomodroButton" (click)="setSTime()">Set</button>
+      </div>
+      <label for="breakTime" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Break Time:</label>
+      <div class="col-sm-4">
+        <input [(ngModel)]="bTime" id="breakTime" class="form-control" style="background-color: #edf5e1;">
+        <button type="button" class="pomodroButton" (click)="setBTime()">Set</button>
+      </div>
+    </div>
+    <p class="responseText">{{ responseText }}</p>
+
+    <div class="pcontainer">
+      <button type="button" class="pomodoroButton" (click) = "startPomodoro()">Start</button>
+      <div class="base-timer">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining" 
+            d="M 50, 
+            50 m -45, 
+            0 a 45,45 0 1,0 90,0
+             a 45,45 0 1,0 -90,0"></path>
+          </g>
+        </svg>
+        <span id="base-timer-label" class="base-timer__label">{{ formatTimeLeft(timeLeft) }}</span>
+      </div>
+    </div>
+  </div>
 </section>
