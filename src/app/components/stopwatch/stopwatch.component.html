@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="pomodroHeading">STOP WATCH!</div>
+    <div class="wrapper">
+      <div class="time">
+        <span class="hour">{{ hour }}</span>
+        <span class="colon">:</span>
+        <span class="minute">{{ min }}</span>
+        <span class="colon">:</span>
+        <span class="second">{{ sec }}</span>
+        <span class="colon">:</span>
+        <span class="millisecond">{{ ms }}</span>
+      </div>
+  
+      <div class="buttons">
+        <button class="start" (click)="start()">START</button>
+        <button class="stop" (click)="stop()">STOP</button>
+        <button class="reset" (click)="reset()">RESET</button>
+        <button class="save" (click)="save()">SAVE</button>
+      </div>
+    </div>
+  
+    <div class="saveReport"></div>
+    <div class="buttons">
+      <button class="delete" (click)="delete()">DELETE</button>
+    </div>
+  </div>
+  

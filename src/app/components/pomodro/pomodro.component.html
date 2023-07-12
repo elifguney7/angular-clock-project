@@ -1,0 +1,23 @@
+<section>  
+    <div class="container">
+      <div class="pomodroHeading">CREATE YOUR OWN POMODRO!</div>
+        <p class="pomodroText">Please select study time between 1-90 minutes and break time between 1-30 minutes</p>
+        
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Study Time:</label>
+        <div class="col-sm-4">
+          <input [(ngModel)]="sTime" id="studyTime" class="form-control" style="background-color: #edf5e1;" >
+          <button type="button" class="pomodroButton" (click)="setSTime()">Set </button>
+        </div>
+        <label for="fname" class="col-sm-2 col-form-label"><i class="fa fa-user"></i> Break Time:</label>
+        <div class="col-sm-4">
+          <input [(ngModel)]="bTime" id="breakTime" class="form-control" style="background-color: #edf5e1;">    
+          <button type="button" class="pomodroButton" (click)="setBTime()">Set</button>        
+        </div>
+        
+        </div>         
+        <p class="responseText">{{ responseText }}</p>
+        <div id="app"></div>           
+        
+    </div>        
+</section>
